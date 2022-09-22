@@ -1,6 +1,17 @@
 #include <memberType.h>
 #include <iostream>
 
+memberType::memberType()
+{
+    memberID = "abc123";
+    firstName = "fName";
+    lastName = "lName";
+    booksPurchased = 0;
+    amountSpent = 0;
+    booksDiscount = 0;
+    lengthOfMembership = 0;
+}
+
 void memberType::setMemberInfo(string ID, string fName, string lName,
                                int bPurchased, double amount, double discount, int membership)
 {

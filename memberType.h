@@ -19,12 +19,12 @@ private:
 
     int booksPurchased;
     double amountSpent;
-    double booksDiscount; //if books purchased>=4 set it to 4 
-                        //else set the value to 0
-    int lengthOfMembership; //int variable to store length of membership
+    double booksDiscount; // if books purchased>=4 set it to 4
+                          // else set the value to 0
+    int lengthOfMembership; // int variable to store length of membership
 
 public:
-    memberType(); //Default constructor
+    memberType(); // Default constructor
     void setMemberInfo(string ID, string fName, string lName,
                        int bPurchased, double amount, double discount, int membership);
     void setMemberID(string);
@@ -35,7 +35,7 @@ public:
     bool checkMembership(int membership);
     bool checkDiscount(int discount);
 
-    string getID() const; 
+    string getID() const;
     string getFirstName() const;
     string getLastName() const;
     int getBookCount() const;
@@ -45,8 +45,7 @@ public:
     double getDiscountAmount() const;
     double getFinalPrice() const;
 
-    
-    ~memberType(); //Destructor
+    ~memberType(); // Destructor
 };
 
 #endif // H_mrmberType
