@@ -1,4 +1,3 @@
-
 #include <memberType.h>
 #include <iostream>
 
@@ -36,12 +35,31 @@ bool memberType::checkBookCount(int booksCount)
 }
 bool memberType::checkAmountSpent(int booksCount, double amountSpent)
 {
+    if (booksCount < 0 && amountSpent > 0)
+    {
+        return 0;
+    }
+    if (booksCount > 0 && amountSpent < 0)
+    {
+        return 0;
+    }
+    return 1;
 }
 bool memberType::checkMembership(int membership)
 {
+    if (membership > 0)
+    {
+        return 1;
+    }
+    return 0;
 }
 bool memberType::checkDiscount(int discount)
 {
+    if (discount > 0)
+    {
+        return 1;
+    }
+    return 0;
 }
 
 string memberType::getID() const
@@ -74,9 +92,11 @@ double memberType::getDiscount() const
 }
 double memberType::getDiscountAmount() const
 {
+    return (amountSpent / 100) * booksDiscount;
 }
 double memberType::getFinalPrice() const
 {
+    return amountSpent - getDiscountAmount();
 }
 
 memberType::~memberType()
