@@ -21,6 +21,10 @@ void memberType::setMemberInfo(string ID, string fName, string lName,
     booksPurchased = bPurchased;
     amountSpent = amount;
     booksDiscount = discount;
+    if (booksPurchased >= 4)
+    {
+        booksDiscount += 4;
+    }
     lengthOfMembership = membership;
 }
 void memberType::setMemberID(string ID)
