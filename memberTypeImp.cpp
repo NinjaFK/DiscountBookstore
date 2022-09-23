@@ -33,8 +33,27 @@ void memberType::setName(string fName, string lName)
     lastName = lName;
 }
 
-bool memberType::checkID(string)
+bool memberType::checkID(string ID)
 {
+    if (ID.size() != 6)
+    {
+        return 0;
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        if (ID[i] < 65 || (ID[i] > 90 && ID[i] < 97) || ID[i] > 122)
+        {
+            return 0;
+        }
+    }
+    for (int i = 3; i < 6; i++)
+    {
+        if (ID[i] < 48 || ID[i] > 57)
+        {
+            return 0;
+        }
+    }
+    return 1;
 }
 bool memberType::checkBookCount(int booksCount)
 {

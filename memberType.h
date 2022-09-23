@@ -19,8 +19,8 @@ private:
 
     int booksPurchased;
     double amountSpent;
-    double booksDiscount; // if books purchased>=4 set it to 4
-                          // else set the value to 0
+    double booksDiscount;   // if books purchased>=4 set it to 4
+                            // else set the value to 0
     int lengthOfMembership; // int variable to store length of membership
 
 public:
