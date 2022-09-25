@@ -1,9 +1,9 @@
-#include <memberType.h>
+#include "memberType.h"
 #include <iostream>
 
 memberType::memberType()
 {
-    memberID = "abc123";
+    memberID = "sbc123";
     firstName = "fName";
     lastName = "lName";
     booksPurchased = 0;
@@ -69,11 +69,11 @@ bool memberType::checkBookCount(int booksCount)
 }
 bool memberType::checkAmountSpent(int booksCount, double amountSpent)
 {
-    if (booksCount < 0 && amountSpent > 0)
+    if (booksCount <= 0 && amountSpent > 0)
     {
         return 0;
     }
-    if (booksCount > 0 && amountSpent < 0)
+    if (booksCount > 0 && amountSpent <= 0)
     {
         return 0;
     }

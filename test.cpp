@@ -1,4 +1,10 @@
+#include <fileio.h>
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <iomanip>
+#include <sstream>
+#include <memberType.h>
 using namespace std;
 
 /*
@@ -42,4 +48,32 @@ int main()
 {
     cout << checkID("apc123") << endl;
     return 0;
+}
+
+unsigned int getMembersDataFromFile(ifstream &inFile, memberType storeMembers[500])
+{
+    string line;
+    string partLine;
+    string memberID;
+    string firstName;
+    string lastName;
+    int booksPurchased;
+    double amountSpent;
+    double booksDiscount;
+    int lengthOfMembership;
+    int count;
+    getline(inFile, line);
+    getline(inFile, line);
+    stringstream ss(line);
+    while (getline(inFile, line))
+    {
+        ss >> memberID;
+        cout << memberID << endl;
+        ss >> firstName;
+        ss >> lastName;
+        ss >> booksPurchased;
+        ss >> amountSpent;
+        ss >> booksDiscount;
+        ss >> lengthOfMembership;
+    }
 }
