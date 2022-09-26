@@ -27,6 +27,7 @@ FileClass::FileClass(string file_name)
              << "#################################"
              << "##########################"
              << '\n';
+        inFile.close();
     }
     // opens the the output file
     outFile.open("membersData_output.txt");
@@ -44,6 +45,10 @@ FileClass::~FileClass()
 unsigned int getMembersDataFromFile(ifstream &inFile,
                                     memberType storeMembers[500])
 {
+    if (!inFile.is_open())
+    {
+        return 0;
+    }
     // creates all vars needed to put into
     //  storeMembers
     string line;
@@ -92,6 +97,10 @@ unsigned int getMembersDataFromFile(ifstream &inFile,
 void writeMembersDataToFile(ofstream &outFile,
                             memberType sm[500], unsigned int totalEntry)
 {
+    if (totalEntry == 0)
+    {
+        return;
+    }
     // creates var for vaild amount, books, total money
     int vaild = 0;
     int books = 0;
