@@ -114,7 +114,7 @@ int memberType::getBookCount() const
 }
 double memberType::getPurchaseBill() const
 {
-    return booksDiscount;
+    return amountSpent;
 }
 int memberType::getLenghtOfMembership() const
 {
